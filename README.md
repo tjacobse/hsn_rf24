@@ -16,3 +16,10 @@ To make rpi server
 $cd server_rpi
 Add thingspeak channel API keys
 $make
+
+To get the arduino client up and running
+$git clone SimpleDHT
+Copy or download SimpleDHT into the Arduino library
+Import the .ino file into a project folder in Arduino.
+Copy or download RF24 and RF24Network folder into the Arduino 
+library
