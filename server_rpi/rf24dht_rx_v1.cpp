@@ -81,7 +81,12 @@ int main(int argc, char** argv)
 	  payload_t payload;
 	  network.read(header,&payload,sizeof(payload));
 	  
-	  printf("\nReceived payload from node %i: temp=%0.1f, humidity=%0.1f - ",(int)header.from_node, (float)payload.temp, (float)payload.humidity);
+    	  struct timeval tp;
+          gettimeofday(&tp, NULL);
+          long long mslong = (long long) tp.tv_sec * 1000L + tp.tv_usec / 1000; //get current timestamp in milliseconds
+          //std::cout << mslong << std::endl;
+
+	  printf("\n %f Received payload from node %i temp=%0.1f, humidity=%0.1f", (double)tp.tv_sec, (int)header.from_node, (float)payload.temp, (float)payload.humidity);
 
 	  for(i=0; i<noOfChannels; i++)
 	    {
