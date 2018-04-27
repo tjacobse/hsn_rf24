@@ -27,8 +27,8 @@ while 1:
     while network.available():
         header, payload = network.read()
         print("payload length ", len(payload))
-        print("Header: " bytes(header))
-        print("Payload: " bytes(payload))
+        print("Header: {:}".format(bytes(header)))
+        print("Payload: {:}".format(bytes(payload)))
         #ms, number = unpack('<LL', bytes(payload))
         #print('Received payload ', number, ' at ', ms, ' from ', oct(header.from_node))
 time.sleep(1)
